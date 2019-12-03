@@ -1,7 +1,4 @@
 class BlogsController < ApplicationController
-  def action1
-  end
-
-  def action2
+  def index
   end
 end
