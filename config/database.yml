@@ -1,17 +1,18 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: postgresql #adapterという設定は、どのデータベース（DBMS）を使用するかを設定します。
+  encoding: unicode #encodingは文字コードを設定します。今回はunicodeつまり、UTF8を指定しています。
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: sample_development
+  database: sample_development #databaseは、どのデータベースに接続するかを指定します。
+
 test:
   <<: *default
   database: sample_test
-  
+
 production:
   <<: *default
   database: sample_production
-  username: sample
-  password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>
+  username: sample #usernameは、データベースに接続する際、どのユーザで接続するかを決定します。
+  password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %> #passwordは、そのユーザのパスワードを記述します。設定していない場合、記述する必要はありません。
