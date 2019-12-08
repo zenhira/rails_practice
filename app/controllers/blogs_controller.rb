@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
-    raise
   end
 
   def new
@@ -22,6 +21,9 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
   end
+
+  def edit
+    @blog = Blog.find(params[:id])
 
   private
 
